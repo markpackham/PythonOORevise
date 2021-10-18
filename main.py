@@ -27,8 +27,6 @@ class Item:
 
 # represent objects eg print(Item.all) gives
 # [Item (Phone,100,1), Item (Laptop,1000,3), Item (Cable,10,5), Item (Mouse,50,5), Item (Keyboard,75,5)]
-    # def __repr__(self):
-    #     return f"Item ({self.name},{self.price},{self.quantity})"
 
 # item1 = Item("Phone", 100, 1)
 # item2 = Item("Laptop", 1000, 3)
@@ -41,7 +39,7 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
-        with open('items2.csv', 'r') as f:
+        with open('items.csv', 'r') as f:
             reader = csv.DictReader(f)
             items = list(reader)
         
@@ -53,7 +51,21 @@ class Item:
             )
 
 
+    @staticmethod
+    def is_integer(num):
+
+        if isinstance(num, float):
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        else:
+            return False
 
 
-Item.instantiate_from_csv()
-print(Item.all)
+    def __repr__(self):
+        return f"Item ({self.name},{self.price},{self.quantity})"
+
+# Item.instantiate_from_csv()
+# print(Item.all)
+
+print(Item.is_integer(11.0))
