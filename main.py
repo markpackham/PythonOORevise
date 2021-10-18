@@ -1,23 +1,22 @@
 class Item:
-    def __init__(self, name, price, quantity=0):
+
+    # Pay rate after 20% discount
+    pay_rate = 0.8
+
+    def __init__(self, name: str, price: float, quantity=1):
+        # Run validations on arguments
+        assert price > 0 and quantity > 0, f"Price {price} and quanity {quantity} must be great than zero"
+
+        # Assign to self object
         self.name = name
         self.price = price
         self.quantity = quantity
 
-    def calculate_total_price(self, x, y):
-        return x * y
+    def calculate_total_price(self):
+        return self.price * self.quantity
         
 
-item1 = Item("Phone",100,5)
-item1.price = 100
-item1.quantity = 5
+item1 = Item("Phone",100.51,5)
+item2 = Item("Laptop",1000,3)
 
-item2 = Item("Laptop",1000)
-item2.price = 1000
-
-print(item1.name)
-print(item2.name)
-print(item1.price)
-print(item2.price)
-print(item1.quantity)
-print(item2.quantity)
+print(Item.pay_rate)
