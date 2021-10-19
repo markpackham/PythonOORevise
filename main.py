@@ -66,7 +66,17 @@ class Item:
 
 
 
-Item.instantiate_from_csv()
-print(Item.all)
+
+class Phone(Item):
+    pass
+
+
+# Item.instantiate_from_csv()
+# print(Item.all)
 
 # print(Item.is_integer(11.0))
+
+phone1 = Item("jscPhonev10", 500,5)
+phone1.broken_phones = 1
+phone2 = Phone("jscPhonev20", 700,5)
+phone2.broken_phones = 1
