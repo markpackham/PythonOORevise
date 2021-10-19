@@ -14,6 +14,6 @@ from item import Item
 # print(Phone.all)
 
 item1 = Item("MyItem", 750)
-item1.name = "OtherItem"
+item1.name = "I have been changed by a Setter"
 
-print(item1.read_only_name)
+print(item1.name)
